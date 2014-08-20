@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='collective.jazzport',
-    version='0.9.3.dev0',
+    version='0.9.3',
     description='A yet another Zip exporter for Plone content',
     long_description=(open('README.rst').read() + '\n' +
                       open('CHANGES.rst').read()),

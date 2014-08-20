@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.9.3 (unreleased)
+0.9.3 (2014-08-20)
 ------------------
 
 - Hide document action by default; Add optional object button
