@@ -10,10 +10,6 @@ class IJazzportLayer(Interface):
     """Marker interface that defines a Zope 3 browser layer"""
 
 
-def getDefaultPortalTypes(context=None):
-    return set(['File', 'Image'])
-
-
 class IJazzportSettings(Interface):
 
     portal_types = schema.Set(
@@ -23,6 +19,5 @@ class IJazzportSettings(Interface):
             title=_(u'Type'),
             vocabulary='plone.app.vocabularies.ReallyUserFriendlyTypes'
         ),
-        defaultFactory=getDefaultPortalTypes,
         required=False
     )
