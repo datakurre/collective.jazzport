@@ -4,8 +4,8 @@ Changelog
 0.9.3 (unreleased)
 ------------------
 
-- Nothing changed yet.
-
+- Hide document action by default; Add optional object button
+  [Asko Soukka]
 
 0.9.2 (2014-08-20)
 ------------------
