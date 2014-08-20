@@ -4,8 +4,8 @@ Changelog
 0.9.2 (unreleased)
 ------------------
 
-- Nothing changed yet.
-
+- Drop defaultFactory for Plone 4.1 compatibility
+  [Asko Soukka]
 
 0.9.1 (2014-08-20)
 ------------------
