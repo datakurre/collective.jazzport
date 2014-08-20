@@ -1,11 +1,17 @@
 # -*- coding: utf-8 -*-
 from App.config import getConfiguration
 from concurrent import futures
+from urllib import urlencode
+from urlparse import parse_qs
+from urlparse import urlparse
+from urlparse import urlunparse
 import StringIO
 import logging
+import os
 import re
 import requests
 import zipfile
+import mimetypes
 
 try:
     import zlib
@@ -14,7 +20,20 @@ except ImportError:
     compression = zipfile.ZIP_STORED
 
 
+types_map = dict([
+    (t[1], t[0])
+    for t in sorted(mimetypes.types_map.items(), key=lambda t: t[0])
+])
+
 logger = logging.getLogger('collective.jazzport')
+
+
+def ajax_load_url(url):
+    scheme, netloc, path, params, query, fragment = urlparse(url)
+    query = parse_qs(query)
+    query.update({'ajax_load': 1})
+    query = urlencode(query)
+    return urlunparse([scheme, netloc, path, params, query, fragment])
 
 
 def get(url, cookies):
@@ -35,19 +54,23 @@ def compress(data):
     zf = zipfile.ZipFile(fb, mode='w')
 
     for url in keys:
-        filename = url[len(prefix):]
+        # Get basename
+        filename = urlunparse(list(urlparse(url)[:3]) + 3 * [''])[len(prefix):]
+
+        # Get response
         response = data[url]
 
         # Skip non OK responses
         if response.status_code != 200:
             continue
 
-        # Skip uninteresting HTML-files
-        content_type = response.headers.get('content-type')
-        if not content_type or content_type.startswith('text'):
-            continue
+        # Get suffix from the content-type header
+        content_type = \
+            (response.headers.get('content-type') or '').split(';')[0]
+        if content_type in types_map and not os.path.splitext(filename)[1]:
+            filename += types_map.get(content_type)
 
-        # Replace filename with content-disposition's filename
+        # Or get full filename form the content-disposition header
         content_disposition = response.headers.get('content-disposition')
         if content_disposition:
             for name in re.findall('filename="([^"]+)"', content_disposition):

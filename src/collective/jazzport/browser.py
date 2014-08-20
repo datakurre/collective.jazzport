@@ -4,7 +4,7 @@ from Products.Five import BrowserView
 from Products.statusmessages.interfaces import IStatusMessage
 from collective.jazzport.interfaces import IJazzportSettings
 from collective.jazzport.iterators import AsyncWorkerStreamIterator
-from collective.jazzport.utils import ZipExport
+from collective.jazzport.utils import ZipExport, ajax_load_url
 from plone.registry.interfaces import IRegistry
 from zExceptions import NotFound
 from zope.component import getMultiAdapter
@@ -76,7 +76,8 @@ class ZipDownloadView(BrowserView):
             'path': '/'.join(ob.getPhysicalPath()),
             'portal_type': list(settings.portal_types or []) or None
         }
-        urls = sorted([brain.getURL() for brain in pc(query)])
+
+        urls = sorted([ajax_load_url(brain.getURL()) for brain in pc(query)])
         if not urls:
             raise NotFound(self.context, self.__name__, self.request)
 
