@@ -6,7 +6,7 @@
             i18n:domain="collective.jazzport">
       <property name="title" i18n:translate="">Download Zip</property>
       <property name="description" i18n:translate=""></property>
-      <property name="url_expr">string:@@zip-download</property>
+      <property name="url_expr">string:${context/@@plone_context_state/canonical_object_url}/@@zip-download</property>
       <property name="link_target"></property>
       <property name="icon_expr"></property>
       <property name="available_expr"></property>
