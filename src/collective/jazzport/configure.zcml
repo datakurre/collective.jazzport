@@ -13,6 +13,22 @@
       />
 
   <browser:page
+      name="enable-zip-download"
+      for="*"
+      layer=".interfaces.IJazzportLayer"
+      class=".browser.EnableZipDownloadView"
+      permission="cmf.ModifyPortalContent"
+      />
+
+  <browser:page
+      name="disable-zip-download"
+      for="*"
+      layer=".interfaces.IJazzportLayer"
+      class=".browser.DisableZipDownloadView"
+      permission="cmf.ModifyPortalContent"
+      />
+
+  <browser:page
       name="zip-download"
       for="*"
       layer=".interfaces.IJazzportLayer"

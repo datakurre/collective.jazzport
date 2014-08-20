@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from Products.CMFCore.utils import getToolByName
 from Products.Five import BrowserView
+from Products.statusmessages.interfaces import IStatusMessage
 from collective.jazzport.interfaces import IJazzportSettings
 from collective.jazzport.iterators import AsyncWorkerStreamIterator
 from collective.jazzport.utils import ZipExport
@@ -8,6 +9,47 @@ from plone.registry.interfaces import IRegistry
 from zExceptions import NotFound
 from zope.component import getMultiAdapter
 from zope.component import getUtility
+from zope.i18nmessageid import MessageFactory
+
+_ = MessageFactory('collective.jazzport')
+
+
+class EnableZipDownloadView(BrowserView):
+
+    def __call__(self):
+        context_state = getMultiAdapter(
+            (self.context, self.request), name='plone_context_state')
+        ob = context_state.canonical_object()
+
+        ob.manage_permission(
+            'collective.jazzport: Download Zip',
+            ['Anonymous']
+        )
+
+        msg = _('Enabled zip download')
+        IStatusMessage(self.request).addStatusMessage(msg)
+
+        self.request.response.redirect(ob.absolute_url())
+        return u''
+
+
+class DisableZipDownloadView(BrowserView):
+
+    def __call__(self):
+        context_state = getMultiAdapter(
+            (self.context, self.request), name='plone_context_state')
+        ob = context_state.canonical_object()
+
+        ob.manage_permission(
+            'collective.jazzport: Download Zip',
+            []
+        )
+
+        msg = _('Disabled zip download')
+        IStatusMessage(self.request).addStatusMessage(msg)
+
+        self.request.response.redirect(ob.absolute_url())
+        return u''
 
 
 class ZipDownloadView(BrowserView):

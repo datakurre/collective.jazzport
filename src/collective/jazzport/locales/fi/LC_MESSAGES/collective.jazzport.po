@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-08-20 03:00+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"POT-Creation-Date: 2014-08-20 08:15+0000\n"
+"PO-Revision-Date: 2014-08-20 11:15+0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -17,22 +17,30 @@ msgstr ""
 msgid "Activates Jazzport, the yet another Zip exporter"
 msgstr "Aktivoi Jazzport-lisäosan, joka mahdollistaa sisällön Zip-latauksen"
 
+#: collective/jazzport/browser.py:48
+msgid "Disabled zip download"
+msgstr "Zip-lataus sallittu"
+
 #: collective/jazzport/profiles/default/actions.xml
 msgid "Download Zip"
 msgstr "Lataa Zip"
 
-msgid "Jazzport"
-msgstr ""
+#: collective/jazzport/browser.py:29
+msgid "Enabled zip download"
+msgstr "Zip-lataus estetty"
 
-#: collective/jazzport/interfaces.py:18
+msgid "Jazzport"
+msgstr "Zip-lataus (Jazzport)"
+
+#: collective/jazzport/interfaces.py:21
 msgid "Portal types"
 msgstr "Sisältötyypit"
 
-#: collective/jazzport/interfaces.py:19
+#: collective/jazzport/interfaces.py:22
 msgid "Select downloadable portal types"
 msgstr "Valitse ladattavat Sisältötyypit"
 
-#: collective/jazzport/interfaces.py:21
+#: collective/jazzport/interfaces.py:24
 msgid "Type"
 msgstr "Tyyppi"
 
