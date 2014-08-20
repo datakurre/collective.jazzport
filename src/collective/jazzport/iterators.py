@@ -24,8 +24,7 @@ class zhttp_channel_async_wrapper(object):
     def _push(self, producer, send=1):
         if (isinstance(producer, str)
                 and producer.startswith('HTTP/1.1 200 OK')):
-            # Fix Content-Length to match the real content length
-            # (an alternative would be to use chunked encoding)
+            # Fix response headers to match the final content:
             s = str(self._content_length)
             if self._content_type:
                 s += '\r\nContent-Type: {0:s}'.format(self._content_type)
