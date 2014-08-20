@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.9.1 (unreleased)
+0.9.1 (2014-08-20)
 ------------------
 
 - Drop unnecessary requirement for Dexterity
