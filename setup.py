@@ -28,6 +28,7 @@ setup(
         'Products.CMFPlone',
         'futures',
         'plone.app.registry',
+        'plone.app.vocabularies',
         'plone.registry',
         'plone.supermodel',
         'requests',
