@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.9.2 (unreleased)
+0.9.2 (2014-08-20)
 ------------------
 
 - Drop defaultFactory for Plone 4.1 compatibility
