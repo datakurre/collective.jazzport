@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.9.4 (unreleased)
+0.9.4 (2014-08-20)
 ------------------
 
 - Fix Finnish localization
