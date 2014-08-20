@@ -16,7 +16,7 @@ setup(
     author='Asko Soukka',
     author_email='asko.soukka@iki.fi',
     url='https://github.com/datakurre/collective.jazzport/',
-    license='EUPL',
+    license='GPL',
     package_dir={'': 'src'},
     packages=find_packages('src', exclude=['ez_setup']),
     namespace_packages=['collective'],
