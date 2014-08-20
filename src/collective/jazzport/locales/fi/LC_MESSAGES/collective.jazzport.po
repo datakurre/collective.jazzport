@@ -15,24 +15,24 @@ msgstr ""
 "Domain: DOMAIN\n"
 
 msgid "Activates Jazzport, the yet another Zip exporter"
-msgstr ""
+msgstr "Aktivoi Jazzport-lisäosan, joka mahdollistaa sisällön Zip-latauksen"
 
 #: collective/jazzport/profiles/default/actions.xml
 msgid "Download Zip"
-msgstr ""
+msgstr "Lataa Zip"
 
 msgid "Jazzport"
 msgstr ""
 
 #: collective/jazzport/interfaces.py:18
 msgid "Portal types"
-msgstr ""
+msgstr "Sisältötyypit"
 
 #: collective/jazzport/interfaces.py:19
 msgid "Select downloadable portal types"
-msgstr ""
+msgstr "Valitse ladattavat Sisältötyypit"
 
 #: collective/jazzport/interfaces.py:21
 msgid "Type"
-msgstr ""
+msgstr "Tyyppi"
 

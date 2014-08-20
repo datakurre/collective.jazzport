@@ -5,23 +5,28 @@
     xmlns:i18n="http://namespaces.zope.org/i18n"
     i18n_domain="collective.jazzport">
 
-  <!--<i18n:registerTranslations directory="locales" />-->
+  <i18n:registerTranslations directory="locales" />
 
-  <!--<genericsetup:registerProfile-->
-      <!--name="default"-->
-      <!--title="Jazzport"-->
-      <!--description="Activates collective.jazzport"-->
-      <!--directory="profiles/default"-->
-      <!--provides="Products.GenericSetup.interfaces.EXTENSION"-->
-      <!--/>-->
-
-  <!--<include file="upgrades.zcml"/>-->
+  <permission
+      id="collective.jazzport.download"
+      title="collective.jazzport: Download Zip"
+      />
 
   <browser:page
       name="zip-download"
       for="*"
+      layer=".interfaces.IJazzportLayer"
       class=".browser.ZipDownloadView"
-      permission="zope2.View"
+      permission="collective.jazzport.download"
+      />
+
+  <genericsetup:registerProfile
+      name="default"
+      title="Jazzport"
+      description="Activates Jazzport, the yet another Zip exporter"
+      directory="profiles/default"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      i18n:attributes="title description"
       />
 
 </configure>

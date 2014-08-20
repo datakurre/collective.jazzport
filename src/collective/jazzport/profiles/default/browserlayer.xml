@@ -2,6 +2,6 @@
 <layers>
   <layer
       name="collective.jazzport"
-      interface="collective.jazzport.interfaces.ICollectiveJazzportLayer"
+      interface="collective.jazzport.interfaces.IJazzportLayer"
       />
 </layers>

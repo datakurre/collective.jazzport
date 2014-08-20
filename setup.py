@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 setup(
     name='collective.jazzport',
     version='0.1.0',
-    description='',
+    description='A yet another Zip exporter for Plone content',
     long_description=(open('README.rst').read() + '\n' +
                       open('CHANGES.rst').read()),
     classifiers=[
@@ -24,9 +24,17 @@ setup(
     zip_safe=False,
     install_requires=[
         'setuptools',
+        'Products.CMFCore',
         'Products.CMFPlone',
-        'requests',
         'futures',
+        'plone.app.registry',
+        'plone.registry',
+        'plone.supermodel',
+        'requests',
+        'zope.component',
+        'zope.interface',
+        'zope.i18nmessageid',
+        'zope.schema',
         # -*- Extra requirements: -*-
     ],
     extras_require={'test': [
