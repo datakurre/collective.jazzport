@@ -31,7 +31,6 @@ setup(
         'plone.app.registry',
         'plone.app.vocabularies',
         'plone.registry',
-        'plone.supermodel',
         'requests',
         'zope.component',
         'zope.interface',

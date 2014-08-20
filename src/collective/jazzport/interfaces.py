@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-from plone.supermodel import model
 from zope import schema
 from zope.i18nmessageid import MessageFactory
 from zope.interface import Interface
@@ -15,7 +14,7 @@ def getDefaultPortalTypes(context=None):
     return set(['File', 'Image'])
 
 
-class IJazzportSettings(model.Schema):
+class IJazzportSettings(Interface):
 
     portal_types = schema.Set(
         title=_(u'Portal types'),
