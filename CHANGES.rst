@@ -4,8 +4,8 @@ Changelog
 0.9.4 (unreleased)
 ------------------
 
-- Nothing changed yet.
-
+- Fix Finnish localization
+  [Asko Soukka]
 
 0.9.3 (2014-08-20)
 ------------------
