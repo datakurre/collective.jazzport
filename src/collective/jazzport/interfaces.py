@@ -1,9 +1,8 @@
 # -*- coding: utf-8 -*-
 from plone.supermodel import model
-from zope.i18nmessageid import MessageFactory
-
-from zope.interface import Interface
 from zope import schema
+from zope.i18nmessageid import MessageFactory
+from zope.interface import Interface
 
 _ = MessageFactory('collective.jazzport')
 

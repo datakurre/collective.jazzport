@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
 from Products.CMFCore.utils import getToolByName
 from Products.Five import BrowserView
-from plone.registry.interfaces import IRegistry
-from zExceptions import NotFound
-from zope.component import getMultiAdapter, getUtility
 from collective.jazzport.interfaces import IJazzportSettings
-
 from collective.jazzport.iterators import AsyncWorkerStreamIterator
 from collective.jazzport.utils import ZipExport
+from plone.registry.interfaces import IRegistry
+from zExceptions import NotFound
+from zope.component import getMultiAdapter
+from zope.component import getUtility
 
 
 class ZipDownloadView(BrowserView):

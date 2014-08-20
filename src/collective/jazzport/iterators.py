@@ -1,11 +1,9 @@
 # -*- coding: utf-8 -*-
-import StringIO
-import threading
-
 from ZPublisher.Iterators import IStreamIterator
-
 from ZServer.PubCore.ZEvent import Wakeup
 from zope.interface import implements
+import StringIO
+import threading
 
 
 class zhttp_channel_async_wrapper(object):

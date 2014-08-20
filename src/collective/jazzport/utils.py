@@ -1,12 +1,11 @@
 # -*- coding: utf-8 -*-
-import logging
-import StringIO
-import re
-import zipfile
-
 from App.config import getConfiguration
 from concurrent import futures
+import StringIO
+import logging
+import re
 import requests
+import zipfile
 
 try:
     import zlib
