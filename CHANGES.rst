@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.9.0 (2014-xx-xx)
+0.9.0 (2014-08-20)
 ------------------
 
 - First experimental release.
