@@ -15,7 +15,7 @@ setup(
     keywords='',
     author='Asko Soukka',
     author_email='asko.soukka@iki.fi',
-    url='https://source.kopla.jyu.fi/code/plone-packages/collective.jazzport',
+    url='https://github.com/datakurre/collective.jazzport/',
     license='EUPL',
     package_dir={'': 'src'},
     packages=find_packages('src', exclude=['ez_setup']),
