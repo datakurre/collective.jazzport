@@ -24,6 +24,7 @@ setup(
     zip_safe=False,
     install_requires=[
         'setuptools',
+        # -*- Extra requirements: -*-
         'Products.CMFCore',
         'Products.CMFPlone',
         'futures',
@@ -36,7 +37,6 @@ setup(
         'zope.interface',
         'zope.i18nmessageid',
         'zope.schema',
-        # -*- Extra requirements: -*-
     ],
     extras_require={'test': [
         'unittest2',
