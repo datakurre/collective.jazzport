@@ -48,7 +48,8 @@ def get_canonical_filename(filename):
 
 def compress(data):
     keys = sorted(data.keys())
-    prefix = keys[0][:keys[0].rfind('/') + 1]
+    common = os.path.commonprefix(keys)
+    prefix = common[:common.rfind('/') + 1]
 
     fb = StringIO.StringIO()
     zf = zipfile.ZipFile(fb, mode='w')
