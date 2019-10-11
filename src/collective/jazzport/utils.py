@@ -37,7 +37,7 @@ def ajax_load_url(url):
 
 
 def get(url, cookies):
-    return requests.get(url, cookies=cookies)
+    return requests.get(url, cookies=cookies, verify=False)
 
 
 def get_canonical_filename(filename):
@@ -49,7 +49,11 @@ def get_canonical_filename(filename):
 def compress(data):
     keys = sorted(data.keys())
     common = os.path.commonprefix(keys)
-    prefix = common[:common.rfind('/') + 1]
+
+    if keys:
+        prefix = keys[0][:keys[0].rfind('/') + 1]
+    else:
+        prefix = ''
 
     fb = StringIO.StringIO()
     zf = zipfile.ZipFile(fb, mode='w')
@@ -80,6 +84,8 @@ def compress(data):
                 break
 
         # Write file top zip
+        if filename == '.html':
+            filename = 'index.html'
         zf.writestr(filename, response.content)
 
     zf.close()
@@ -113,7 +119,7 @@ class ZipExport(object):
         thread_executor = futures.ThreadPoolExecutor(max_workers=max_workers)
 
         futures_to_promises = dict([
-            (thread_executor.submit(requests.get, url, **self.kwargs), url)
+            (thread_executor.submit(requests.get, url, verify=False, **self.kwargs), url)
             for url in self.urls
         ])
 
@@ -123,7 +129,8 @@ class ZipExport(object):
             # noinspection PyBroadException
             try:
                 data[url] = future.result()
-            except Exception:
+            except Exception as e:
+                logger.exception('Unexpected error')
                 pass
 
         callback(compress(data), 'application/zip', self.filename)
