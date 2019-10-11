@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.0.1 (unreleased)
+1.0.1 (2019-10-11)
 ------------------
 
 - Add to ignore certificates to avoid SSL errors; Fix export to not crash on
