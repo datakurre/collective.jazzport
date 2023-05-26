@@ -47,7 +47,7 @@ def get_canonical_filename(filename):
 
 
 def compress(data):
-    keys = sorted(data.keys())
+    keys = sorted(data.keys(), key=len)
     common = os.path.commonprefix(keys)
 
     if keys:
